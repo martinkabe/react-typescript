@@ -2,6 +2,8 @@ import ListGroup from "./components/ListGroup";
 import Alert from "./components/Alert";
 import Button from "./components/Button";
 import { useState } from "react";
+import { BsFillCalendarFill } from "react-icons/bs";
+import Like from "./components/Like";
 
 function App() {
   let items = ["New York", "London", "San Francisco", "Paris"];
@@ -28,6 +30,8 @@ function App() {
           children="My Button"
           onClick={() => setAlertVisibility(true)}
         />
+        <BsFillCalendarFill color="red" size={40} />
+        <Like onClick={() => console.log("Clicked!")} />
       </>
     </div>
   );
