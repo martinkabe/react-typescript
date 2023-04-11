@@ -3,15 +3,18 @@ import { useState } from "react";
 import { FcLike, FcLikePlaceholder } from "react-icons/fc";
 
 interface Props {
-  onClick: () => void;
+  onClick: (cnt: number) => void;
 }
 
 const Like = ({ onClick }: Props) => {
   const [clickLike, setClickLike] = useState(false);
+  let [clickCount, setClickCount] = useState(1);
 
   const toggle = () => {
     setClickLike(!clickLike);
-    onClick();
+    clickCount++;
+    setClickCount(clickCount);
+    onClick(clickCount);
   };
 
   if (clickLike) return <FcLike color="#ff6b81" size={40} onClick={toggle} />;
